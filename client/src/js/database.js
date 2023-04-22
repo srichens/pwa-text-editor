@@ -23,7 +23,7 @@ export const putDb = async (content) => {
   console.log('🚀 - data saved to the database', result);
 };
 
-console.error('putDb not implemented');
+//console.error('putDb not implemented');
 
 // TODO: Add logic for a method that gets all the content from the database
 export const getDb = async () => {
@@ -38,6 +38,6 @@ export const getDb = async () => {
 };
 
 
-console.error('getDb not implemented');
+//console.error('getDb not implemented');
 
 initdb();
