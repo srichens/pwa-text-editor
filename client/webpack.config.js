@@ -7,8 +7,9 @@ module.exports = () => {
   return {
     mode: 'development',
     entry: {
+      editor: './src/js/editor.js',
       main: './src/js/index.js',
-      install: './src/js/install.js'
+      install: './src/js/install.js',              
     },
     output: {
       filename: '[name].bundle.js',
