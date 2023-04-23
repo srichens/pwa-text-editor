@@ -10,7 +10,6 @@ module.exports = () => {
       editor: './src/js/editor.js',
       main: './src/js/index.js',
       install: './src/js/install.js', 
-      // favicon: { import: './favicon.ico', filename: './favicon.ico'}
     },
     output: {
       filename: '[name].bundle.js',
@@ -20,6 +19,7 @@ module.exports = () => {
         new HtmlWebpackPlugin({
           template: './index.html',
           title: 'JATE',
+          //*with tutor* added this plugin so favicon will show up
           favicon: './favicon.ico'
         }),
        
