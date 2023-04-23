@@ -1,6 +1,5 @@
 import { openDB } from 'idb';
 
-
 const initdb = async () =>
   openDB('jate', 1, {
     upgrade(db) {
@@ -12,7 +11,6 @@ const initdb = async () =>
       console.log('jate database created');
     },
   });
-
 
 export const putDb = async (content) => {
   console.log('PUT to the database');
@@ -26,8 +24,7 @@ export const putDb = async (content) => {
   const result = await request;
   console.log('🚀 - data saved to the database', result);
 };
-
-
+ß
 export const getDb = async () => {
   console.log('GET all from the database');
   const jateDb = await openDB('jate', 1);
@@ -41,7 +38,5 @@ export const getDb = async () => {
   //added the ? promise so we won't get an error message if there isn't already data in the database
   return result?.content;
 };
-
-
 
 initdb();
