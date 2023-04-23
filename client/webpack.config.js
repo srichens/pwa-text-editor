@@ -9,7 +9,8 @@ module.exports = () => {
     entry: {
       editor: './src/js/editor.js',
       main: './src/js/index.js',
-      install: './src/js/install.js',              
+      install: './src/js/install.js', 
+      // favicon: { import: './favicon.ico', filename: './favicon.ico'}
     },
     output: {
       filename: '[name].bundle.js',
@@ -18,7 +19,8 @@ module.exports = () => {
     plugins: [       
         new HtmlWebpackPlugin({
           template: './index.html',
-          title: 'JATE'
+          title: 'JATE',
+          favicon: './favicon.ico'
         }),
        
         new InjectManifest({
