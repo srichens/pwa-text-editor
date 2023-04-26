@@ -3,12 +3,12 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](https://opensource.org/licenses/MIT)
 
 ## Bootcamp Week 19 Challenge
-This week's challenge was to refactor starter code to build a single-page text editor that runs in the browser, meets PWA criteria, includes data persistance for redundancy, and also functions offline. The requirements included the following:
+This week's challenge was to refactor starter code to build a single-page text editor that runs in the browser, meets PWA criteria, includes data persistence for redundancy, and also functions offline. The requirements included the following:
 
 1. Use IndexedDB to store and get data.
 2. Bundle the JavaScript files using webpack.
 3. Generate a manifest file from the webpack.
-4. Use workbox to create a service work that caches assets.
+4. Use workbox to create a service worker that caches assets.
 5. Ensure the application works offline and can be installed as a PWA.
 
 
@@ -21,7 +21,7 @@ This week's challenge was to refactor starter code to build a single-page text e
 6. [Questions](#questions)
 
 ## Installation
-This app is deployed on Heroku, so it can be used solely in the browser. But if run from the command line, it requires Node.js, npm, Express.js, and idb.
+This app is deployed on Heroku, so it can be used solely in the browser. But if running from the command line, it requires Node.js, npm, Express.js, and idb.
 
 ## Usage
 1. From the command line, run npm i and then npm start to create the dist files, and then open the indicated port in the browser.
@@ -38,8 +38,11 @@ This app is deployed on Heroku, so it can be used solely in the browser. But if 
 
 ## Process Highlights
 
-1. One of the most difficult parts of this challenge was that the data persistence was so good, it was easy to think changes or fixes that I made didn't happen. 
-2. Another challenge was the JATE header not showing up. I could see on the editor.js file that there's a setValue function that would load either the database data, the local storage data, or the header, but there was a error saying that setValue wasn't a function because it could only work with a string. The header is a string, local storage is a string, but the IndexeDB is an object. So then I thought I had to turn that into a string somehow and didn't know what to do. But then my tutor helped me fix it - the error was stopping the 
+1. One of the most difficult parts of this challenge was that the data persistence was so good, it was easy to think changes or fixes that I made didn't actually happen or work. 
+2. A specific challenge was that after compiling all the code that I thought would have basically completed the app, the JATE header was not showing up. I could see on the editor.js file that there's a setValue function that would load either the database data, the local storage data, or the header, but there was a error saying that setValue wasn't a function because it's a split method and could only work with a string (the error was "e.split is not a function"). I worked with my tutor on that and found that I was returning the full "result" from the database, which was an object, rather than just the the value, or content as I named it. So the error went away when I returned result.content instead. 
+3. Another thing that wasn't working was the data was not persisting offline. That's because, as I understood it working with my tutor, I needed to assign the content an id of 1 so that it would always overwrite previous versions and only have one version to draw on. 
+4. My tutor also helped with the favicon showing up - just for fun, since it didn't seem to be a requirement.
+5. In the end, this assignment started off seeming pretty boilerplate, but then had some interesting problems that made it more engaging.
 
 ## License
 This product is licensed under MIT.
